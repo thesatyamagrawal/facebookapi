@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Facebook Graph API</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="js.js">
+</script>
+</head>
+
+
+
+<!-- HTML CONTENT HERE-->
+
+<body style="background-color:#d5dbe8">
+<div>
+<div class="container align-center"  style="background-color:#3366CC">
+	<p class="col-lg-12 col-xs-12" style="background-color: #3366CC; font:30px solid; text-align:center">Your Facebook Profile</p>
+	<input type="text"  class="col-lg-6 col-xs-12" id="accesstoken" placeholder="Enter Your FB Token" />
+		<input type="submit" class="col-lg-3 col-xs-12" id='btnone' value="Profile Details" />
+		<input type="submit" class="col-lg-3 col-xs-12" id='btntwo' value="News Feed" />
+
+</div>
+
+    <div class="container">
+      
+            <div class="row" id="photos" >
+              <div class="col-md-12 col-sm-12 col-lg-12">
+                <div id="fb-profile">
+                  <img align="left" class="myCoverPic col-lg-12 col-xs-12" alt="Cover pic" >
+                  <img align="right" class="myProfilePic col-lg-3 col-xs-6" alt="Profile pic">
+                </div>
+              </div>
+            </div>
+            
+      <div id="Facebookprofile"> 
+            <div class="row">
+              <div class="col-md-3 col-sm-12 col-lg-3">
+                <nav class="navbar navbar-default " id="sideNav" style="background-color:#b5bcb7">
+              
+                
+                  <div  class="navbar-header">
+                    <button type="button btn-primary" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">More Details</a>
+                  </div>
+
+                  <div class="collapse navbar-collapse sidebar" id="bs-example-navbar-collapse-1">
+                    <ul class="navbar-nav nav">
+                      <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#basic" id="click1">About</a></li></br>
+                      <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#work" id="click2">Work and Education</a></li></br>
+                      <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#family" id="click3">Family and Relationship</a></li></br>
+                      <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact" id="click4">Contacts</a></li>
+                    </ul> 
+                  </div>
+                </nav>
+              </div>
+          
+              
+              <div class="col-md-8 col-sm-12 col-lg-8">
+                <div id="basic">
+                  <h2>About Me</h2>
+                  <br />
+                  <p>Name : <span id="myName"></span></p>
+                  <p>Facebook Profile ID : <span id="myProfileId"></span></p>
+                  <p>Gender : <span id="myGender"></span></p>
+                  <p>Birthday : <span id="myBirthday"></span></p>
+                  <p>Languages : <span id="myLanguage"></span></p>
+                  <p>Home Town : <span id="myHomeTown"></span></p>
+                  <p>My Quotes: <span id="myQuotes"></span></p>
+                </div>
+              </div>
+          
+              
+              <div class="col-md-8 col-sm-12 col-lg-8">
+                <div id="work">
+                  <h2>Work and Education</h2>
+                  <p>Work : <span id="myWork"></span></p>
+                  <p>Education : <span id="myEducation"></span></p>
+                </div>
+              </div>
+          
+              
+              <div class="col-md-8 col-sm-12 col-lg-8">
+                <div id="family">
+                  <h2>Relationship</h2>
+                  <br />
+                  <p>Relationship Status : <span id="myRelation"></span></p>
+                  <p>Family members : <span id="myFamily"></span></p>
+                </div>
+              </div>
+          
+              
+              <div class="col-md-8 col-sm-12 col-lg-8">
+                <div id="contact">
+                  <h2>Contacts</h2>
+                  <br />
+                  <p>Email : <span id="myEmail" style="color: #2058c9"></span></p>
+                  <p>Websites : <span id="myWebsite" style="color: #2058c9"></span></p>
+                </div>
+              </div>
+            </div> 
+      </div> 
+    </div> 
+          
+  
+    <div class="container">
+      <div id="Facebookfeed">  
+        
+        
+        <section class="container">
+          <div class="row">
+            <div class="col-md-6 col-sm-12 col-lg-6">
+              <div class="fbfeedone">
+                <a id="fbpostone"></a>
+                <a class="photofbpostone"></a>
+              </div>
+            </div>
+       
+            <div class="col-md-6 col-sm-12 col-lg-6">
+              <div class="fbfeedtwo">
+                <a id="fbposttwo"></a>
+                <a class="photofbposttwo"></a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        
+        <section class="container">
+          <div class="row">
+            <div class="col-md-6 col-sm-12 col-lg-6">
+              <div class="fbfeedthree">
+                <a id="fbpostthree"></a>
+                <a class="photofbpostthree"></a>
+              </div>
+            </div>
+        
+            <div class="col-md-6 col-sm-12 col-lg-6">
+              <div class="fbfeedfour">
+                <a id="fbpostfour"></a>
+                <a class="photofbpostfour"></a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        
+        <section class="container">
+          <div class="row">
+            <div class="col-md-6 col-sm-12 col-lg-6">
+              <div class="fbfeedfive">
+                <a id="fbpostfive"></a>
+                <a class="photofbpostfive"></a>
+              </div>
+            </div>
+        
+            <div class="col-md-6 col-sm-12 col-lg-6">
+              <div class="fbfeedsix">
+                <a id="fbpostsix"></a>
+                <a class="photofbpostsix"></a>
+              </div>
+            </div>
+          </div>
+        </section>
+      
+       
+        <section class="container">
+          <div class="row">
+            <div class="col-md-6 col-sm-12 col-lg-6">
+              <div class="fbfeedseven">
+                <a id="fbpostseven"></a>
+                <a class="photofbpostseven"></a>
+              </div>
+            </div>
+          
+            <div class="col-md-6 col-sm-12 col-lg-6">
+              <div class="fbfeedeight">
+                <a id="fbposteight"></a>
+                <a class="photofbposteight"></a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+         
+        <section class="container">
+          <div class="row">
+            <div class="col-md-6 col-sm-12 col-lg-6">
+              <div class="fbfeednine">
+                <a id="fbpostnine"></a>
+                <a class="photofbpostnine"></a>
+              </div>
+            </div>
+        
+            <div class="col-md-6 col-sm-12 col-lg-6">
+              <div class="fbfeedten">
+                <a id="fbpostten"></a>
+                <a class="photofbpostten"></a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+     </div> 
+    </div>  	
+
+    
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
+	
+	
+</body>
+</html>
